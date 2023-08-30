@@ -6,7 +6,7 @@
   <link href="https://coolshell.fun/atom.xml" rel="self"/>
   
   <link href="https://coolshell.fun/"/>
-  <updated>2023-08-30T02:36:22.166Z</updated>
+  <updated>2023-08-30T10:15:29.363Z</updated>
   <id>https://coolshell.fun/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://coolshell.fun/2023/08/29/hello-world/"/>
     <id>https://coolshell.fun/2023/08/29/hello-world/</id>
     <published>2023-08-29T10:52:05.715Z</published>
-    <updated>2023-08-30T02:36:22.166Z</updated>
+    <updated>2023-08-30T10:15:29.363Z</updated>
     
     
       
@@ -34,10 +34,12 @@
     
     
     
-    <category term="hello" scheme="https://coolshell.fun/categories/hello/"/>
+    <category term="world" scheme="https://coolshell.fun/categories/world/"/>
     
     
     <category term="hello" scheme="https://coolshell.fun/tags/hello/"/>
+    
+    <category term="world" scheme="https://coolshell.fun/tags/world/"/>
     
   </entry>
   
