@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Coolshell for Fun</title>
+  
+  <subtitle>一切为了乐趣</subtitle>
+  <link href="https://coolshell.fun/atom.xml" rel="self"/>
+  
+  <link href="https://coolshell.fun/"/>
+  <updated>2023-08-30T02:36:22.166Z</updated>
+  <id>https://coolshell.fun/</id>
+  
+  <author>
+    <name>周鹏飞</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="https://coolshell.fun/2023/08/29/hello-world/"/>
+    <id>https://coolshell.fun/2023/08/29/hello-world/</id>
+    <published>2023-08-29T10:52:05.715Z</published>
+    <updated>2023-08-30T02:36:22.166Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt; for more info. If you</summary>
+        
+      
+    
+    
+    
+    <category term="hello" scheme="https://coolshell.fun/categories/hello/"/>
+    
+    
+    <category term="hello" scheme="https://coolshell.fun/tags/hello/"/>
+    
+  </entry>
+  
+</feed>
