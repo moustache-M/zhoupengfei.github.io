@@ -6,7 +6,7 @@
   <link href="https://coolshell.fun/atom.xml" rel="self"/>
   
   <link href="https://coolshell.fun/"/>
-  <updated>2023-10-05T06:52:03.652Z</updated>
+  <updated>2023-10-06T05:48:35.805Z</updated>
   <id>https://coolshell.fun/</id>
   
   <author>
@@ -17,23 +17,21 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>post</title>
+    <title>二的补码？哪里来的二？</title>
     <link href="https://coolshell.fun/2023/10/05/post/"/>
     <id>https://coolshell.fun/2023/10/05/post/</id>
     <published>2023-10-05T01:47:14.000Z</published>
-    <updated>2023-10-05T06:52:03.652Z</updated>
+    <updated>2023-10-06T05:48:35.805Z</updated>
     
     
       
       
         
         
-    <summary type="html">#
-&lt;center&gt;
-二的补码？哪里有二？
-&lt;/center&gt;
-&lt;h2 id=&quot;补码起源&quot;&gt;补码起源&lt;/h2&gt;
-&lt;script</summary>
+    <summary type="html">&lt;h1 id=&quot;补码起源&quot;&gt;补码起源&lt;/h1&gt;
+&lt;p&gt;补码起源于数学计算中的概念，详见 &lt;a href=&quot;https://en.wikipedia.org/wiki/Method_of_complements&quot;&gt;wiki&lt;/a&gt;
+。wiki 中对于补码的定义是
+&lt;code&gt;For a given number</summary>
         
       
     

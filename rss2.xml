@@ -9,11 +9,11 @@
     <atom:link href="https://coolshell.fun/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description></description>
-    <pubDate>Thu, 05 Oct 2023 06:52:03 GMT</pubDate>
+    <pubDate>Fri, 06 Oct 2023 05:48:35 GMT</pubDate>
     <generator>http://hexo.io/</generator>
     
     <item>
-      <title>post</title>
+      <title>二的补码？哪里来的二？</title>
       <link>https://coolshell.fun/2023/10/05/post/</link>
       <guid>https://coolshell.fun/2023/10/05/post/</guid>
       <pubDate>Thu, 05 Oct 2023 01:47:14 GMT</pubDate>
@@ -22,12 +22,10 @@
         
           
           
-      <description>#
-&lt;center&gt;
-二的补码？哪里有二？
-&lt;/center&gt;
-&lt;h2 id=&quot;补码起源&quot;&gt;补码起源&lt;/h2&gt;
-&lt;script</description>
+      <description>&lt;h1 id=&quot;补码起源&quot;&gt;补码起源&lt;/h1&gt;
+&lt;p&gt;补码起源于数学计算中的概念，详见 &lt;a href=&quot;https://en.wikipedia.org/wiki/Method_of_complements&quot;&gt;wiki&lt;/a&gt;
+。wiki 中对于补码的定义是
+&lt;code&gt;For a given number</description>
           
         
       
