@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="链表中优化改进的方法
+将成员信息分离为新的类，简化用户交互。
+12345678public class node &amp;#123;    int data;    node next;    public node(int item, node nextNode) &amp;#123;        dat">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="周鹏飞">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="Coolshell for Fun"/>
+    
+
+    <!--Open Graph Description-->
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="Coolshell for Fun"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="website" />
+    
+
+    <!--Page Cover-->
+    
+
+    <meta name="twitter:card" content="summary" />
+    
+
+    <!-- Title -->
+    
+    <title>Coolshell for Fun</title>
+
+    <!-- Tachyons Core CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/tachyons/css/tachyons.min.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    <!-- Google Analytics -->
+    
+
+
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="Coolshell for Fun" type="application/atom+xml">
+<link rel="alternate" href="/rss2.xml" title="Coolshell for Fun" type="application/rss+xml">
+</head>
+
+
+<body>
+
+<!-- Main Content -->
+<!-- Banner -->
+<!-- Banner -->
+<div class="w-100 bg-1 ph5-ns ph3 text-light">
+    
+    <nav class="db dt-l w-100 mw8 center border-box pv3">
+        <a class="db dtc-l v-mid link dim w-100 w-25-l tc tl-l mb2 mb0-l white" href="/" title="Coolshell for Fun">
+            <img src="" class="dib h3" alt="Coolshell for Fun">
+        </a>
+        <div class="db dtc-l v-mid w-100 w-75-l tc tr-l">
+            
+                <a class="link dim f6 f5-l dib mr3 mr4-l white" 
+                    href="/" 
+                    title="主页">
+                    主页
+                </a>
+            
+                <a class="link dim f6 f5-l dib mr3 mr4-l white" 
+                    href="/archives" 
+                    title="归档">
+                    归档
+                </a>
+            
+                <a class="link dim f6 f5-l dib mr3 mr4-l white" 
+                    href="/tags" 
+                    title="标签">
+                    标签
+                </a>
+            
+                <a class="link dim f6 f5-l dib mr3 mr4-l white" 
+                    href="/categories" 
+                    title="分类">
+                    分类
+                </a>
+            
+                <a class="link dim f6 f5-l dib mr3 mr4-l white" 
+                    href="/about" 
+                    title="关于">
+                    关于
+                </a>
+            
+                <a class="link dim f6 f5-l dib mr3 mr4-l white" 
+                    href="/link" 
+                    title="链接">
+                    链接
+                </a>
+            
+        </div>
+    </nav>
+
+    <!-- Title -->
+    <div class="w-100 mw8 center vh-40 dt">
+        <div class="dtc v-mid white">
+            <h1 class="f1-l f2-m tc tc-m tl-ns">Untitled</h1>
+            <p class="f4 fw3 pab-100px tc tc-m tl-ns">2023-09-10</p>
+        </div>
+    </div>
+
+    <!-- Icon -->
+    <div class="relative w-100 mw8 center white dn dn-m db-ns">
+        <i class="header-icon fa fa-file-text-o"></i>
+    </div>
+</div>
+
+<!-- Content -->
+<div class="w-100 ph2 ph4-m ph5-l mv5 mv6-l">
+    <div class="content">
+        <div class="mw8 center">
+            <div class="cf">
+                <div class="fl w-100 w-70-l mw7 left fw3 lh-copy pr4-ns pr0-m post-content">
+                    <!-- Tags Vertical -->
+                    
+
+                    <!-- Main Post Content -->
+                    
+    <div id="toc">
+        <strong class="sidebar-title">目录</strong>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%93%BE%E8%A1%A8%E4%B8%AD%E4%BC%98%E5%8C%96%E6%94%B9%E8%BF%9B%E7%9A%84%E6%96%B9%E6%B3%95"><span class="toc-number">1.</span> <span class="toc-text">链表中优化改进的方法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B0%86%E6%88%90%E5%91%98%E4%BF%A1%E6%81%AF%E5%88%86%E7%A6%BB%E4%B8%BA%E6%96%B0%E7%9A%84%E7%B1%BB%E7%AE%80%E5%8C%96%E7%94%A8%E6%88%B7%E4%BA%A4%E4%BA%92"><span class="toc-number">1.1.</span> <span class="toc-text">将成员信息分离为新的类，简化用户交互。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%95%E7%8B%AC%E5%88%9B%E5%BB%BA%E9%93%BE%E8%A1%A8%E5%A4%B4%E7%9C%81%E5%8E%BB%E8%80%83%E8%99%91%E6%88%90%E5%91%98%E4%B8%BA%E7%A9%BA%E6%97%B6%E5%86%8D%E6%AC%A1%E5%88%9B%E5%BB%BA%E9%93%BE%E8%A1%A8%E5%A4%B4%E7%9A%84%E6%83%85%E5%86%B5%E4%B9%9F%E6%8F%90%E9%AB%98%E8%AE%BF%E9%97%AE%E6%88%90%E5%91%98%E7%9A%84%E6%95%88%E7%8E%87"><span class="toc-number">1.2.</span> <span class="toc-text">单独创建链表头，省去考虑成员为空时再次创建链表头的情况，也提高访问成员的效率。</span></a></li></ol></li></ol>
+    </div>
+
+
+                    <h1 id="链表中优化改进的方法">链表中优化改进的方法</h1>
+<h2
+id="将成员信息分离为新的类简化用户交互">将成员信息分离为新的类，简化用户交互。</h2>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">node</span> &#123;</span><br><span class="line">    <span class="type">int</span> data;</span><br><span class="line">    node next;</span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">node</span><span class="params">(<span class="type">int</span> item, node nextNode)</span> &#123;</span><br><span class="line">        data = item;</span><br><span class="line">        next = nextNode;</span><br><span class="line">    &#125;</span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
+<h2
+id="单独创建链表头省去考虑成员为空时再次创建链表头的情况也提高访问成员的效率">单独创建链表头，省去考虑成员为空时再次创建链表头的情况，也提高访问成员的效率。</h2>
+<ol type="1">
+<li>这里的 head 可以创建两种结构，一种是闭环式的，即末端成员的 next 指向
+head 。还有一种是两头式的，即创建另外一个 head
+放在末尾。我觉得闭环式的可以看作隐式的两头式，它把两个 head 重叠了，（
+优点是更加方便访问成员了，缺点我觉得是缺少明确结束的条件，觉得会出无限循环的
+bug 。）两头式的给出了明确的结束条件，但在访问成员时得考虑是成员还是
+head 。 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">SList</span> &#123;</span><br><span class="line">    node head;</span><br><span class="line">    head = <span class="keyword">new</span> <span class="title class_">node</span>(<span class="number">0</span>, <span class="literal">null</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">addFirst</span><span class="params">(<span class="type">int</span> item)</span> &#123;</span><br><span class="line">        head.next = <span class="keyword">new</span> <span class="title class_">node</span>(item, head.next);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure> ##
+对链表长度进行缓存，将访问长度的时间从线性改为常数。</li>
+<li>在对成员增加删除操作中，要额外增加对长度的修改操作。</li>
+<li>我觉得链表很长时，常数的访问时间就可以弥补对长度修改带来的复杂性问题了。（缺少实操，仅作猜想）
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="variable">size</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/** For example: add size by 1 in addFirst method */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">addFirst</span><span class="params">(<span class="type">int</span> item)</span> &#123;</span><br><span class="line">    head.next = <span class="keyword">new</span> <span class="title class_">node</span>(item, head.next);</span><br><span class="line">    size += <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure> ## 用双向链表将链表访问末端成员时间缩短。</li>
+<li>因为是双向链表，所以在修改链表成员时要注意两个方向都进行修改。虽然这里也是缩短了访问时间，但也增加了代码复杂度。</li>
+<li>闭环式的双向链表感觉在这里更好用，只要维护一个 head ,
+思考理解起来简单. <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/** add prev property to node */</span></span><br><span class="line"><span class="keyword">public</span> node <span class="title function_">addLast</span><span class="params">(<span class="type">int</span> item)</span> &#123;</span><br><span class="line">    head.prev = <span class="keyword">new</span> <span class="title class_">node</span>(item, head.prev, head);</span><br><span class="line">    head.prev.prev.next = head.prev;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> node <span class="title function_">removeLast</span><span class="params">(<span class="type">int</span> item)</span> &#123;</span><br><span class="line">    head.prev = head.prev.prev;</span><br><span class="line">    head.prev.next = head;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure> ## 使用泛型，提高代码通用性</li>
+<li>仅作简单例子的记录，刚学，拿捏不准。 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">public</span>  <span class="keyword">class</span> <span class="title class_">DLList</span>&lt;Type&gt; &#123;</span><br><span class="line">    Type data;</span><br><span class="line">    node prev;</span><br><span class="line">    node next;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">node</span><span class="params">(Type item, prevNode, nextNode)</span> &#123;</span><br><span class="line">        data = item;</span><br><span class="line">        prev = prevNode;</span><br><span class="line">        next = nextNode;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> Type <span class="title function_">removeLast</span><span class="params">()</span> &#123;</span><br><span class="line">        head.prev = head.prev.prev;</span><br><span class="line">        head.prev.next = head;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure> #
+几个技巧性的链表的方法</li>
+<li>单向链表反转成员顺序 ： reverse() <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">reverse</span><span class="params">()</span> &#123;</span><br><span class="line">    node back; </span><br><span class="line">    node front;</span><br><span class="line">    back = <span class="literal">null</span>;</span><br><span class="line">    front = head.next;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> (front != <span class="literal">null</span>) &#123;</span><br><span class="line">        <span class="type">node</span> <span class="variable">p</span> <span class="operator">=</span> front.next;</span><br><span class="line">        front.next = back; </span><br><span class="line">        back = front;</span><br><span class="line">        front = p;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    head = back;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure> # 利用数组存储数据
+因为数组从一开始就是固定的，无论是添加首成员还是尾成员都有一定限度，这里面有几个问题要注意。<br />
+</li>
+<li>添加成员的方向性问题。我觉得整体可以遵循从右往左的顺序，以某一个格子为基准，往左依次添加首成员,
+往右依次添加尾成员。当左边满了以后，下一个首成员开始从数组最右边开始往左数，第一个空的就做为首成员。<br><strong>如图</strong><img
+src="/assets/img/Array.png" title="Magic Gardens"
+alt="数组成员存储" /><br />
+</li>
+<li>从数组开头跳转到数组末尾的问题。因为要是添加首成员时，我们可以简单的将当前首成员位置减去一，就是下一个首成员的位置。可是当当前成员在数组开头时，我们就不能减一，而是要跳到数组末尾。<strong>我的想法</strong>是按照链表的结构来想象数组，把数组想象为一个闭环。这样首尾就相连了,
+虽然不能减一到达末尾，但我可以增加数组长度来试着到达末尾。这样以来又产生一个问题，即添加首成员时要分类讨论当前成员的位置。为了统一，我把所有的减都当作加来看待。这让我想起来学c语言时，</li>
+<li>伸缩数组长度问题。当数组成员高到或低到一定百分比时就需要扩增或缩减数组。这个百分比，我不太懂。这里先只说如何扩增。扩增前后必须保证数组成员方向性一致，才能保证对数组成员的操作一致!
+我的想法是从数组尾端与首端成员相连处分开，在这中间插入数组。<br><strong>如下图所示</strong><br><img
+src="/assets/img/Array_2.png" title="Array_2.png"
+alt="数组成员存储" /><br><strong>下面是扩增之后的效果</strong><br><img
+src="/assets/img/Array_3.png" title="Array_3.png" alt="数组成员扩增" />
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">public class ALList() &#123;</span><br><span class="line"></span><br><span class="line">    private</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+
+                    
+                    <!-- Tags Bottom -->
+                    
+
+                    <!-- Comments -->
+                    
+
+
+
+                </div>
+                <div class="fl w-100 w-30-l center fw3 lh-copy pl4-ns tl black-50">
+                    
+                    <hr class="dn-l mw4 black-50 mt5" />
+                    
+                    <!-- Widget 1: About -->
+                    <div class="mt5 mt0-l">
+    <article class="dt db-l mw8 mw8-m mw5-ns center ml0-l bg-white mv3">
+        <div class="dn dtc-m db-l v-mid tc pr4 pr0-l" style="min-width: 6rem;">
+            <img src="/assets/c.jpg" class="mb4-l br-100 h3 w3 h4-l w4-l dib" title="周鹏飞">
+        </div>
+        <div class="dtc db-l v-mid lh-copy measure center f6 black-50 tj">
+            My name is Jonathan Klughertz and this is my blog.<br>I am a full stack software engineer with a strong front-end focus.<br> I currently live and work in Singapore, hit me up if you are in the region.
+        </div>
+    </article>
+</div>
+
+                    <hr class="dn-l mw4 black-50 mt5" />
+                    
+                    <!-- Widget 2: Categories -->
+                    
+
+                    <!-- Widget 3: Recent Posts -->
+                    <div class="mt5 tc tl-l">
+    <h3>近期文章</h3>
+    
+        <p>
+            <a href="/2023/10/05/post/">post</a>
+        </p>
+    
+        <p>
+            <a href="/2023/09/10/linkedlist-md/">Untitled</a>
+        </p>
+    
+        <p>
+            <a href="/2023/08/29/hello-world/">Hello World</a>
+        </p>
+    
+</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Footer -->
+<div class="bg-1 ph2 ph5-ns pv5">
+        <div class="mv8">
+            <div class="center tc">
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="https://twitter.com/?lang=en" target="_blank">
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                    </div>
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="https://www.facebook.com/" target="_blank">
+                            <i class="fa fa-facebook"></i>
+                        </a>
+                    </div>
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="https://dribbble.com/" target="_blank">
+                            <i class="fa fa-dribbble"></i>
+                        </a>
+                    </div>
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="https://github.com/moustache-M/zhoupengfei.github.io" target="_blank">
+                            <i class="fa fa-github"></i>
+                        </a>
+                    </div>
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="https://plus.google.com/" target="_blank">
+                            <i class="fa fa-google-plus"></i>
+                        </a>
+                    </div>
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="https://www.behance.net/" target="_blank">
+                            <i class="fa fa-behance"></i>
+                        </a>
+                    </div>
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="https://500px.com/" target="_blank">
+                            <i class="fa fa-500px"></i>
+                        </a>
+                    </div>
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="mailto:test@example.com" target="_blank">
+                            <i class="fa fa-envelope"></i>
+                        </a>
+                    </div>
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="/atom.xml" target="_blank">
+                            <i class="fa fa-rss"></i>
+                        </a>
+                    </div>
+                
+            </div>
+            <div class="f6 f5-ns center tc white pt5 fw3">
+                @Untitled. All right reserved | Design & Hexo <a class="link dim white" target="_blank" rel="noopener" href="http://www.codeblocq.com/">Jonathan Klughertz</a>
+            </div>
+        </div>
+    </div>
+
+<!-- After Footer -->
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>
